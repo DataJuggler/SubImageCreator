@@ -62,8 +62,9 @@ namespace SubImageCreator
             this.SubImage8 = new System.Windows.Forms.PictureBox();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.SizeLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.SubImagesCountLabel = new System.Windows.Forms.Label();
             this.SizeComboBox = new System.Windows.Forms.ComboBox();
+            this.InstructionsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage3)).BeginInit();
@@ -128,6 +129,7 @@ namespace SubImageCreator
             this.SubImage1.TabIndex = 2;
             this.SubImage1.TabStop = false;
             this.SubImage1.Visible = false;
+            this.SubImage1.Click += new System.EventHandler(this.SubImage1_Click);
             // 
             // SubImage2
             // 
@@ -138,6 +140,7 @@ namespace SubImageCreator
             this.SubImage2.TabIndex = 2;
             this.SubImage2.TabStop = false;
             this.SubImage2.Visible = false;
+            this.SubImage2.Click += new System.EventHandler(this.SubImage2_Click);
             // 
             // SubImage3
             // 
@@ -148,6 +151,7 @@ namespace SubImageCreator
             this.SubImage3.TabIndex = 2;
             this.SubImage3.TabStop = false;
             this.SubImage3.Visible = false;
+            this.SubImage3.Click += new System.EventHandler(this.SubImage3_Click);
             // 
             // SubImage4
             // 
@@ -158,6 +162,7 @@ namespace SubImageCreator
             this.SubImage4.TabIndex = 2;
             this.SubImage4.TabStop = false;
             this.SubImage4.Visible = false;
+            this.SubImage4.Click += new System.EventHandler(this.SubImage4_Click);
             // 
             // SubImage5
             // 
@@ -168,6 +173,7 @@ namespace SubImageCreator
             this.SubImage5.TabIndex = 2;
             this.SubImage5.TabStop = false;
             this.SubImage5.Visible = false;
+            this.SubImage5.Click += new System.EventHandler(this.SubImage5_Click);
             // 
             // SubImage6
             // 
@@ -178,6 +184,7 @@ namespace SubImageCreator
             this.SubImage6.TabIndex = 2;
             this.SubImage6.TabStop = false;
             this.SubImage6.Visible = false;
+            this.SubImage6.Click += new System.EventHandler(this.SubImage6_Click);
             // 
             // SubImage7
             // 
@@ -188,6 +195,7 @@ namespace SubImageCreator
             this.SubImage7.TabIndex = 2;
             this.SubImage7.TabStop = false;
             this.SubImage7.Visible = false;
+            this.SubImage7.Click += new System.EventHandler(this.SubImage7_Click);
             // 
             // SubImage8
             // 
@@ -198,6 +206,7 @@ namespace SubImageCreator
             this.SubImage8.TabIndex = 2;
             this.SubImage8.TabStop = false;
             this.SubImage8.Visible = false;
+            this.SubImage8.Click += new System.EventHandler(this.SubImage8_Click);
             // 
             // StatusLabel
             // 
@@ -221,16 +230,16 @@ namespace SubImageCreator
             this.SizeLabel.Text = "Size:";
             this.SizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // SubImagesCountLabel
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.label1.Location = new System.Drawing.Point(127, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubImagesCountLabel.BackColor = System.Drawing.Color.Transparent;
+            this.SubImagesCountLabel.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.SubImagesCountLabel.Location = new System.Drawing.Point(127, 105);
+            this.SubImagesCountLabel.Name = "SubImagesCountLabel";
+            this.SubImagesCountLabel.Size = new System.Drawing.Size(46, 20);
+            this.SubImagesCountLabel.TabIndex = 4;
+            this.SubImagesCountLabel.Text = "0";
+            this.SubImagesCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SizeComboBox
             // 
@@ -241,14 +250,26 @@ namespace SubImageCreator
             this.SizeComboBox.TabIndex = 6;
             this.SizeComboBox.SelectedIndexChanged += new System.EventHandler(this.SizeComboBox_SelectedIndexChanged);
             // 
+            // InstructionsLabel
+            // 
+            this.InstructionsLabel.AutoSize = true;
+            this.InstructionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.InstructionsLabel.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.InstructionsLabel.Location = new System.Drawing.Point(13, 601);
+            this.InstructionsLabel.Name = "InstructionsLabel";
+            this.InstructionsLabel.Size = new System.Drawing.Size(294, 18);
+            this.InstructionsLabel.TabIndex = 5;
+            this.InstructionsLabel.Text = "Right click a sub image to remove.";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1072, 608);
+            this.ClientSize = new System.Drawing.Size(1072, 634);
+            this.Controls.Add(this.InstructionsLabel);
             this.Controls.Add(this.SizeComboBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SubImagesCountLabel);
             this.Controls.Add(this.SizeLabel);
             this.Controls.Add(this.StatusLabel);
             this.Controls.Add(this.SubImage8);
@@ -294,8 +315,9 @@ namespace SubImageCreator
         private System.Windows.Forms.PictureBox SubImage8;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Label SizeLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label SubImagesCountLabel;
         private System.Windows.Forms.ComboBox SizeComboBox;
+        private System.Windows.Forms.Label InstructionsLabel;
     }
     #endregion
 

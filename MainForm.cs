@@ -39,7 +39,7 @@ namespace SubImageCreator
         {
             // Create Controls
             InitializeComponent();
-
+            
             // Perform initializations for this object
             Init();
         }
@@ -55,7 +55,7 @@ namespace SubImageCreator
             {
                 // Cast the event args as MouseEventArgs
                 MouseEventArgs e2 = (MouseEventArgs) e;
-
+                
                 // if we already have the subimages
                 if (SubImagesCount >= 8)
                 {
@@ -70,73 +70,73 @@ namespace SubImageCreator
                         // locals
                         int x = e2.X;
                         int y = e2.Y;
-
+                        
                         // for debugging only
                         int originalX = x;
                         int originalY = y;
-
+                        
                         // Get the current image
                         Image image = this.Canvas.BackgroundImage;
                         Bitmap bitmap = new Bitmap(image);
-
+                        
                         // x & y must now be scaled
                         double canvasWidth = this.Canvas.Width;
                         double canvasHeight = this.Canvas.Height;
                         double bitmapWidth = bitmap.Width;
                         double bitmapHeight = bitmap.Height;
-
+                        
                         // get the xScale and the yScale
                         double scaleX = bitmapWidth / canvasWidth;
                         double scaleY = bitmapHeight / canvasHeight;
                         double doubleX = (double) x;
                         double doubleY = (double) y;
-
+                        
                         // reset the values
                         x = (int) (doubleX * scaleX);
                         y = (int) (doubleY * scaleY);
-
+                        
                         // ensure x is in range
                         if (x < 0)
                         {
                             // reset x
                             x = 0;
                         }
-
+                        
                         // ensure x is in range
                         if (x >= bitmap.Width)
                         {
                             // reset x
                             x = bitmap.Width -1;
                         }
-
+                        
                         // ensure y is in range
                         if (y < 0)
                         {
                             // reset y
                             y = 0;
                         }
-
+                        
                         // ensure y is in range
                         if (y >= bitmap.Height)
                         {
                             // reset y
                             y = bitmap.Height - 1;
                         }
-
+                        
                         // here we have (approximately) the x & y clicked. Sometimes rounding makes it off a pixel or two possibly
                         Point topLeft = new Point(x, y);
-
+                        
                         Rectangle size = new Rectangle(0, 0, SubImageSize, SubImageSize);
-
+                        
                         // Create a subImage
                         Bitmap subImage = PixelDatabase.CreateSubImage(topLeft, size);
-
+                        
                         // If the subImage object exists
                         if (subImage != null)
                         {
                             // Add
                             this.SubImages.Add(subImage);
-    
+                            
                             // Display the SubImages
                             DisplaySubImages();
                         }
@@ -186,60 +186,204 @@ namespace SubImageCreator
                 switch (SizeComboBox.SelectedIndex)
                 {
                     case 0:
-
-                        // Set the size
-                        SubImageSize = 16;
-
-                        // required
-                        break;
-
+                    
+                    // Set the size
+                    SubImageSize = 16;
+                    
+                    // required
+                    break;
+                    
                     case 1:
-
-                        // Set the size
-                        SubImageSize = 32;
-
-                        // required
-                        break;
-
+                    
+                    // Set the size
+                    SubImageSize = 32;
+                    
+                    // required
+                    break;
+                    
                     case 2:
-
-                        // Set the size
-                        SubImageSize = 48;
-
-                        // required
-                        break;
-
+                    
+                    // Set the size
+                    SubImageSize = 48;
+                    
+                    // required
+                    break;
+                    
                     case 3:
-
-                        // Set the size
-                        SubImageSize = 64;
-
-                        // required
-                        break;
-
-                     case 4:
-
-                        // Set the size
-                        SubImageSize = 96;
-
-                        // required
-                        break;
-
+                    
+                    // Set the size
+                    SubImageSize = 64;
+                    
+                    // required
+                    break;
+                    
+                    case 4:
+                    
+                    // Set the size
+                    SubImageSize = 96;
+                    
+                    // required
+                    break;
+                    
                     case 5:
-
-                        // Set the size
-                        SubImageSize = 128;
-
-                        // required
-                        break;
-
+                    
+                    // Set the size
+                    SubImageSize = 128;
+                    
+                    // required
+                    break;
+                    
                     case 6:
+                    
+                    // Set the size
+                    SubImageSize = 256;
+                    
+                    // required
+                    break;
+                }
+            }
+            #endregion
+            
+            #region SubImage1_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage1' is clicked.
+            /// </summary>
+            private void SubImage1_Click(object sender, EventArgs e)
+            {
+                // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
 
-                        // Set the size
-                        SubImageSize = 256;
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(0);
+                }
+            }
+            #endregion
+            
+            #region SubImage2_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage2' is clicked.
+            /// </summary>
+            private void SubImage2_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
 
-                        // required
-                        break;
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(1);
+                }
+            }
+            #endregion
+            
+            #region SubImage3_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage3' is clicked.
+            /// </summary>
+            private void SubImage3_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(2);
+                }
+            }
+            #endregion
+            
+            #region SubImage4_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage4' is clicked.
+            /// </summary>
+            private void SubImage4_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(3);
+                }
+            }
+            #endregion
+            
+            #region SubImage5_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage5' is clicked.
+            /// </summary>
+            private void SubImage5_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(4);
+                }
+            }
+            #endregion
+            
+            #region SubImage6_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage6' is clicked.
+            /// </summary>
+            private void SubImage6_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(5);
+                }
+            }
+            #endregion
+            
+            #region SubImage7_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage7' is clicked.
+            /// </summary>
+            private void SubImage7_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(6);
+                }
+            }
+            #endregion
+            
+            #region SubImage8_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'SubImage8' is clicked.
+            /// </summary>
+            private void SubImage8_Click(object sender, EventArgs e)
+            {
+                 // get the mouseArgs
+                MouseEventArgs mouseArgs = (MouseEventArgs) e;
+
+                // if the right button
+                if (mouseArgs.Button == MouseButtons.Right)
+                {
+                    // Remove the SubImage
+                    RemoveSubImage(7);
                 }
             }
             #endregion
@@ -252,7 +396,7 @@ namespace SubImageCreator
             {
                 // Create a new collection of 'Bitmap' objects.
                 this.SubImages = new List<Bitmap>();
-
+                
                 // local
                 FormWindowState windowState = this.WindowState;
                 
@@ -292,7 +436,7 @@ namespace SubImageCreator
             {
                 // local 
                 int count = 0;
-
+                
                 // hide each control
                 this.SubImage1.Visible = false;
                 this.SubImage2.Visible = false;
@@ -302,10 +446,10 @@ namespace SubImageCreator
                 this.SubImage6.Visible = false;
                 this.SubImage7.Visible = false;
                 this.SubImage8.Visible = false;
-
+                
                 // Display the count
-                this.CountLabel.Text = "Sub Images: " + subImages.Count.ToString();
-
+                SubImagesCountLabel.Text = SubImagesCount.ToString();
+                
                 // if the value for HasSubImages is true
                 if (HasSubImages)
                 {
@@ -314,79 +458,79 @@ namespace SubImageCreator
                     {
                         // Increment the value for count
                         count++;
-
+                        
                         // Determine the action by the count
                         switch (count)
                         {
                             case 1:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage1.BackgroundImage = bitmap;
                                 SubImage1.Visible = true;
-
+                            
                                 // required
                                 break;
-
+                            
                             case 2:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage2.BackgroundImage = bitmap;
                                 SubImage2.Visible = true;
-
+                            
                                 // required
                                 break;
-
+                            
                             case 3:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage3.BackgroundImage = bitmap;
                                 SubImage3.Visible = true;
-
+                            
                                 // required
                                 break;
-
+                            
                             case 4:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage4.BackgroundImage = bitmap;
                                 SubImage4.Visible = true;
-
+                            
                                 // required
                                 break;
-
+                                
                             case 5:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage5.BackgroundImage = bitmap;
                                 SubImage5.Visible = true;
-
+                            
                                 // required
                                 break;
-
+                            
                             case 6:
-
+                            
                                 // Set the BackgroundImage
                                 SubImage6.BackgroundImage = bitmap;
                                 SubImage6.Visible = true;
-
+                            
                                 // required
                                 break;
-
-                            case 7:
-
+                            
+                        case 7:
+                            
                                 // Set the BackgroundImage
                                 SubImage7.BackgroundImage = bitmap;
                                 SubImage7.Visible = true;
-
+                            
                                 // required
                                 break;
-
-                            case 8:
-
+                            
+                        case 8:
+                            
                                 // Set the BackgroundImage
                                 SubImage8.BackgroundImage = bitmap;
                                 SubImage8.Visible = true;
-
+                            
                                 // required
                                 break;
                         }
@@ -410,13 +554,13 @@ namespace SubImageCreator
                 SizeComboBox.Items.Add("96 x 96");
                 SizeComboBox.Items.Add("128 x 128");
                 SizeComboBox.Items.Add("256 x 256");
-
+                
                 // Default to 64 x 64
                 SizeComboBox.SelectedIndex = 3;
-
+                
                 // Set the SubImageSize
                 SubImageSize = 64;
-
+                
                 // Create a new collection of 'Bitmap' objects.
                 this.SubImages = new List<Bitmap>();
             }
@@ -437,9 +581,27 @@ namespace SubImageCreator
             }
             #endregion
             
-        #endregion
+            #region RemoveSubImage(int index)
+            /// <summary>
+            /// This method Remove Sub Image
+            /// </summary>
+            public void RemoveSubImage(int index)
+            {
+                // if the SubImages exist
+                if ((HasSubImages) && (SubImagesCount > index))
+                {
+                    // remove this item
+                    SubImages.RemoveAt(index);
 
-        #region Properties()
+                    // Redisplay
+                    DisplaySubImages();
+                }
+            }
+            #endregion
+            
+        #endregion
+        
+        #region Properties
             
             #region HasPixelDatabase
             /// <summary>
@@ -484,8 +646,8 @@ namespace SubImageCreator
                 get { return pixelDatabase; }
                 set { pixelDatabase = value; }
             }
-        #endregion
-
+            #endregion
+            
             #region SubImages
             /// <summary>
             /// This property gets or sets the value for 'SubImages'.
@@ -496,7 +658,7 @@ namespace SubImageCreator
                 set { subImages = value; }
             }
             #endregion
-
+            
             #region SubImagesCount
             /// <summary>
             /// This read only property returns the Count of subimages
@@ -507,14 +669,14 @@ namespace SubImageCreator
                 {
                     // initial value
                     int count = 0;
-
+                    
                     // if the value for HasSubImages is true
                     if (HasSubImages)
                     {
                         // set the return value
                         count = subImages.Count;
                     }
-
+                    
                     // return value
                     return count;
                 }
@@ -530,10 +692,10 @@ namespace SubImageCreator
                 get { return subImageSize; }
                 set { subImageSize = value; }
             }
+            #endregion
+            
         #endregion
-
-        #endregion
-
+        
     }
     #endregion
 
