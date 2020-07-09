@@ -53,83 +53,93 @@ namespace SubImageCreator
             /// </summary>
             private void Canvas_Click(object sender, EventArgs e)
             {
+                // Cast the event args as MouseEventArgs
                 MouseEventArgs e2 = (MouseEventArgs) e;
 
-                // if the value for HasPixelDatabase is true
-                if (HasPixelDatabase)
+                // if we already have the subimages
+                if (SubImagesCount >= 8)
                 {
-                    // locals
-                    int x = e2.X;
-                    int y = e2.Y;
-
-                    // for debugging only
-                    int originalX = x;
-                    int originalY = y;
-
-                    // Get the current image
-                    Image image = this.Canvas.BackgroundImage;
-                    Bitmap bitmap = new Bitmap(image);
-
-                    // x & y must now be scaled
-                    double canvasWidth = this.Canvas.Width;
-                    double canvasHeight = this.Canvas.Height;
-                    double bitmapWidth = bitmap.Width;
-                    double bitmapHeight = bitmap.Height;
-
-                    // get the xScale and the yScale
-                    double scaleX = bitmapWidth / canvasWidth;
-                    double scaleY = bitmapHeight / canvasHeight;
-                    double doubleX = (double) x;
-                    double doubleY = (double) y;
-
-                    // reset the values
-                    x = (int) (doubleX * scaleX);
-                    y = (int) (doubleY * scaleY);
-
-                    // ensure x is in range
-                    if (x < 0)
+                    // set the value
+                    this.StatusLabel.Text = "8 is the maximum sub images";
+                }
+                else
+                {
+                    // if the value for HasPixelDatabase is true
+                    if (HasPixelDatabase)
                     {
-                        // reset x
-                        x = 0;
-                    }
+                        // locals
+                        int x = e2.X;
+                        int y = e2.Y;
 
-                    // ensure x is in range
-                    if (x >= bitmap.Width)
-                    {
-                        // reset x
-                        x = bitmap.Width -1;
-                    }
+                        // for debugging only
+                        int originalX = x;
+                        int originalY = y;
 
-                    // ensure y is in range
-                    if (y < 0)
-                    {
-                        // reset y
-                        y = 0;
-                    }
+                        // Get the current image
+                        Image image = this.Canvas.BackgroundImage;
+                        Bitmap bitmap = new Bitmap(image);
 
-                    // ensure y is in range
-                    if (y >= bitmap.Height)
-                    {
-                        // reset y
-                        y = bitmap.Height - 1;
-                    }
+                        // x & y must now be scaled
+                        double canvasWidth = this.Canvas.Width;
+                        double canvasHeight = this.Canvas.Height;
+                        double bitmapWidth = bitmap.Width;
+                        double bitmapHeight = bitmap.Height;
 
-                    // here we have (approximately) the x & y clicked. Sometimes rounding makes it off a pixel or two possibly
-                    Point topLeft = new Point(x, y);
+                        // get the xScale and the yScale
+                        double scaleX = bitmapWidth / canvasWidth;
+                        double scaleY = bitmapHeight / canvasHeight;
+                        double doubleX = (double) x;
+                        double doubleY = (double) y;
 
-                    Rectangle size = new Rectangle(0, 0, SubImageSize, SubImageSize);
+                        // reset the values
+                        x = (int) (doubleX * scaleX);
+                        y = (int) (doubleY * scaleY);
 
-                    // Create a subImage
-                    Bitmap subImage = PixelDatabase.CreateSubImage(topLeft, size);
+                        // ensure x is in range
+                        if (x < 0)
+                        {
+                            // reset x
+                            x = 0;
+                        }
 
-                    // If the subImage object exists
-                    if (subImage != null)
-                    {
-                        // Add
-                        this.SubImages.Add(subImage);
+                        // ensure x is in range
+                        if (x >= bitmap.Width)
+                        {
+                            // reset x
+                            x = bitmap.Width -1;
+                        }
 
-                        // Display the SubImages
-                        DisplaySubImages();
+                        // ensure y is in range
+                        if (y < 0)
+                        {
+                            // reset y
+                            y = 0;
+                        }
+
+                        // ensure y is in range
+                        if (y >= bitmap.Height)
+                        {
+                            // reset y
+                            y = bitmap.Height - 1;
+                        }
+
+                        // here we have (approximately) the x & y clicked. Sometimes rounding makes it off a pixel or two possibly
+                        Point topLeft = new Point(x, y);
+
+                        Rectangle size = new Rectangle(0, 0, SubImageSize, SubImageSize);
+
+                        // Create a subImage
+                        Bitmap subImage = PixelDatabase.CreateSubImage(topLeft, size);
+
+                        // If the subImage object exists
+                        if (subImage != null)
+                        {
+                            // Add
+                            this.SubImages.Add(subImage);
+    
+                            // Display the SubImages
+                            DisplaySubImages();
+                        }
                     }
                 }
             }
@@ -292,6 +302,9 @@ namespace SubImageCreator
                 this.SubImage6.Visible = false;
                 this.SubImage7.Visible = false;
                 this.SubImage8.Visible = false;
+
+                // Display the count
+                this.CountLabel.Text = "Sub Images: " + subImages.Count.ToString();
 
                 // if the value for HasSubImages is true
                 if (HasSubImages)
@@ -481,6 +494,30 @@ namespace SubImageCreator
             {
                 get { return subImages; }
                 set { subImages = value; }
+            }
+            #endregion
+
+            #region SubImagesCount
+            /// <summary>
+            /// This read only property returns the Count of subimages
+            /// </summary>
+            public int SubImagesCount
+            {
+                get
+                {
+                    // initial value
+                    int count = 0;
+
+                    // if the value for HasSubImages is true
+                    if (HasSubImages)
+                    {
+                        // set the return value
+                        count = subImages.Count;
+                    }
+
+                    // return value
+                    return count;
+                }
             }
             #endregion
             
