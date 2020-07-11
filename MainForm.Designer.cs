@@ -65,6 +65,7 @@ namespace SubImageCreator
             this.SubImagesCountLabel = new System.Windows.Forms.Label();
             this.SizeComboBox = new System.Windows.Forms.ComboBox();
             this.InstructionsLabel = new System.Windows.Forms.Label();
+            this.YouTubeButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage3)).BeginInit();
@@ -73,6 +74,7 @@ namespace SubImageCreator
             ((System.ComponentModel.ISupportInitialize)(this.SubImage6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YouTubeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // TakeScreenShotButton
@@ -98,7 +100,7 @@ namespace SubImageCreator
             // Canvas
             // 
             this.Canvas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Canvas.Location = new System.Drawing.Point(246, 71);
+            this.Canvas.Location = new System.Drawing.Point(246, 96);
             this.Canvas.Name = "Canvas";
             this.Canvas.Size = new System.Drawing.Size(800, 515);
             this.Canvas.TabIndex = 2;
@@ -127,7 +129,7 @@ namespace SubImageCreator
             this.CreateSubImagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.CreateSubImagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CreateSubImagesButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CreateSubImagesButton.Location = new System.Drawing.Point(13, 550);
+            this.CreateSubImagesButton.Location = new System.Drawing.Point(13, 580);
             this.CreateSubImagesButton.Margin = new System.Windows.Forms.Padding(4);
             this.CreateSubImagesButton.Name = "CreateSubImagesButton";
             this.CreateSubImagesButton.Size = new System.Drawing.Size(212, 40);
@@ -289,18 +291,32 @@ namespace SubImageCreator
             this.InstructionsLabel.AutoSize = true;
             this.InstructionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.InstructionsLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.InstructionsLabel.Location = new System.Drawing.Point(13, 601);
+            this.InstructionsLabel.Location = new System.Drawing.Point(13, 641);
             this.InstructionsLabel.Name = "InstructionsLabel";
             this.InstructionsLabel.Size = new System.Drawing.Size(294, 18);
             this.InstructionsLabel.TabIndex = 5;
             this.InstructionsLabel.Text = "Right click a sub image to remove.";
+            // 
+            // YouTubeButton
+            // 
+            this.YouTubeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.YouTubeButton.Location = new System.Drawing.Point(916, 16);
+            this.YouTubeButton.Name = "YouTubeButton";
+            this.YouTubeButton.Size = new System.Drawing.Size(128, 64);
+            this.YouTubeButton.TabIndex = 2;
+            this.YouTubeButton.TabStop = false;
+            this.YouTubeButton.Visible = false;
+            this.YouTubeButton.Click += new System.EventHandler(this.YouTubeButton_Click);
+            this.YouTubeButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.YouTubeButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1072, 634);
+            this.ClientSize = new System.Drawing.Size(1072, 669);
+            this.Controls.Add(this.YouTubeButton);
             this.Controls.Add(this.InstructionsLabel);
             this.Controls.Add(this.SizeComboBox);
             this.Controls.Add(this.SubImagesCountLabel);
@@ -332,6 +348,7 @@ namespace SubImageCreator
             ((System.ComponentModel.ISupportInitialize)(this.SubImage6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SubImage8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YouTubeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +370,7 @@ namespace SubImageCreator
         private System.Windows.Forms.Label SubImagesCountLabel;
         private System.Windows.Forms.ComboBox SizeComboBox;
         private System.Windows.Forms.Label InstructionsLabel;
+        private System.Windows.Forms.PictureBox YouTubeButton;
     }
     #endregion
 

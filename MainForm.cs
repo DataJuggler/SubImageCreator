@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataJuggler.PixelDatabase;
 using DataJuggler.UltimateHelper.Core;
+using System.Diagnostics;
 
 #endregion
 
@@ -31,6 +32,7 @@ namespace SubImageCreator
         private int subImageSize;
         private List<Bitmap> subImages;
         private bool searchMode;
+        private const string YouTubeUrl = "https://youtu.be/JKc7QtdaxWY";
         #endregion
         
         #region Constructor
@@ -377,8 +379,8 @@ namespace SubImageCreator
             /// event is fired when the 'SubImage7' is clicked.
             /// </summary>
             private void SubImage7_Click(object sender, EventArgs e)
-            {
-                 // get the mouseArgs
+            {  
+                // get the mouseArgs
                 MouseEventArgs mouseArgs = (MouseEventArgs) e;
 
                 // if the right button
@@ -401,23 +403,10 @@ namespace SubImageCreator
             /// </summary>
             private void SubImage8_Click(object sender, EventArgs e)
             {
-                 // get the mouseArgs
-                MouseEventArgs mouseArgs = (MouseEventArgs) e;
 
-                // if the right button
-                if (mouseArgs.Button == MouseButtons.Right)
-                {
-                    // Remove the SubImage
-                    RemoveSubImage(7);
-                }
-                else if (SearchMode)
-                {
-                    // Search for the SubImage at this index
-                    SearchForSubImage(7);
-                }
-            }
-            #endregion
-            
+        }
+        #endregion
+
             #region TakeScreenShotButton_Click(object sender, EventArgs e)
             /// <summary>
             /// event is fired when the 'TakeScreenShotButton' is clicked.
@@ -452,6 +441,28 @@ namespace SubImageCreator
                 
                 // Load the PixelDatabase
                 this.PixelDatabase = PixelDatabaseLoader.LoadPixelDatabase(bitmap, Refresh);
+            }
+            #endregion
+            
+            #region YouTubeButton_Click(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when the 'YouTubeButton' is clicked.
+            /// </summary>
+            private void YouTubeButton_Click(object sender, EventArgs e)
+            {
+                // this was so much easier in .Net Framework
+
+                // here is the YouTube button
+
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "cmd",
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    Arguments = $"/c start {YouTubeUrl}"
+                };
+                Process.Start(psi);
             }
             #endregion
             
@@ -580,6 +591,8 @@ namespace SubImageCreator
                 // Setup the buttons
                 TakeScreenShotButton.BackgroundImage = Properties.Resources.WoodButtonWidth1280;
                 CreateSubImagesButton.BackgroundImage = Properties.Resources.WoodButtonWidth1280;
+                YouTubeButton.BackgroundImage = Properties.Resources.YouTube;
+                YouTubeButton.Visible = true;
 
                 // Add these chioces                
                 SizeComboBox.Items.Add("16 x 16");
@@ -589,7 +602,7 @@ namespace SubImageCreator
                 SizeComboBox.Items.Add("96 x 96");
                 SizeComboBox.Items.Add("128 x 128");
                 SizeComboBox.Items.Add("256 x 256");
-                
+                 
                 // Default to 64 x 64
                 SizeComboBox.SelectedIndex = 3;
                 
