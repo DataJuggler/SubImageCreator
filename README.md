@@ -71,6 +71,8 @@ After you have a PixelDatabase loaded, creating a sub image:
     // Create a subImage
     Bitmap subImage = PixelDatabase.CreateSubImage(topLeft, size);
     
+Always test for null before referring to the sub image created, as it may not exist.
+    
 ## Search Sub Image ##
 You can search for a sub image inside a larger image like this:
 
@@ -117,7 +119,8 @@ The size of the rectnalge seems to vary. I wrote this code really quickly over t
 
 I may add some new features to this over time.
 
-    
+Please subscribe to my YouTube channel:
+https://www.youtube.com/channel/UCaw0joqvisKr3lYJ9Pd2vHA
 
 
 
