@@ -17,6 +17,8 @@ The screen shot code was not mine, but the person who asked the question on Stac
     Canvas.BackgroundImage = bitmap;
     this.WindowState = windowState;
     
+    I got some code out of helping someone, which is the best you can hope for with open source.
+    
 This project uses Nuget package DataJuggler.PixelDatabase
 
 DataJuggler.PixelDatabase    Dot Net Core
