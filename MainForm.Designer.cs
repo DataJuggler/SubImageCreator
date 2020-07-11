@@ -20,7 +20,7 @@ namespace SubImageCreator
         private System.Windows.Forms.Button TakeScreenShotButton;
         private System.Windows.Forms.Button Canvas;
         private System.Windows.Forms.Label CountLabel;
-        private System.Windows.Forms.Button CreateSubImages;
+        private System.Windows.Forms.Button CreateSubImagesButton;
         #endregion
         
         #region Methods
@@ -51,7 +51,7 @@ namespace SubImageCreator
             this.TakeScreenShotButton = new System.Windows.Forms.Button();
             this.Canvas = new System.Windows.Forms.Button();
             this.CountLabel = new System.Windows.Forms.Label();
-            this.CreateSubImages = new System.Windows.Forms.Button();
+            this.CreateSubImagesButton = new System.Windows.Forms.Button();
             this.SubImage1 = new System.Windows.Forms.PictureBox();
             this.SubImage2 = new System.Windows.Forms.PictureBox();
             this.SubImage3 = new System.Windows.Forms.PictureBox();
@@ -77,14 +77,23 @@ namespace SubImageCreator
             // 
             // TakeScreenShotButton
             // 
+            this.TakeScreenShotButton.BackColor = System.Drawing.Color.Transparent;
+            this.TakeScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TakeScreenShotButton.FlatAppearance.BorderSize = 0;
+            this.TakeScreenShotButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.TakeScreenShotButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.TakeScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TakeScreenShotButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TakeScreenShotButton.Location = new System.Drawing.Point(13, 17);
             this.TakeScreenShotButton.Margin = new System.Windows.Forms.Padding(4);
             this.TakeScreenShotButton.Name = "TakeScreenShotButton";
-            this.TakeScreenShotButton.Size = new System.Drawing.Size(212, 36);
+            this.TakeScreenShotButton.Size = new System.Drawing.Size(212, 40);
             this.TakeScreenShotButton.TabIndex = 0;
-            this.TakeScreenShotButton.Text = "Get Screenshot";
-            this.TakeScreenShotButton.UseVisualStyleBackColor = true;
+            this.TakeScreenShotButton.Text = "Take Screenshot";
+            this.TakeScreenShotButton.UseVisualStyleBackColor = false;
             this.TakeScreenShotButton.Click += new System.EventHandler(this.TakeScreenShotButton_Click);
+            this.TakeScreenShotButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.TakeScreenShotButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // Canvas
             // 
@@ -109,16 +118,25 @@ namespace SubImageCreator
             this.CountLabel.Text = "Sub Images:";
             this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CreateSubImages
+            // CreateSubImagesButton
             // 
-            this.CreateSubImages.Location = new System.Drawing.Point(13, 550);
-            this.CreateSubImages.Margin = new System.Windows.Forms.Padding(4);
-            this.CreateSubImages.Name = "CreateSubImages";
-            this.CreateSubImages.Size = new System.Drawing.Size(212, 36);
-            this.CreateSubImages.TabIndex = 0;
-            this.CreateSubImages.Text = "Search Sub Images";
-            this.CreateSubImages.UseVisualStyleBackColor = true;
-            this.CreateSubImages.Click += new System.EventHandler(this.SearchSubImages);
+            this.CreateSubImagesButton.BackColor = System.Drawing.Color.Transparent;
+            this.CreateSubImagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CreateSubImagesButton.FlatAppearance.BorderSize = 0;
+            this.CreateSubImagesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.CreateSubImagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.CreateSubImagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateSubImagesButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CreateSubImagesButton.Location = new System.Drawing.Point(13, 550);
+            this.CreateSubImagesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateSubImagesButton.Name = "CreateSubImagesButton";
+            this.CreateSubImagesButton.Size = new System.Drawing.Size(212, 40);
+            this.CreateSubImagesButton.TabIndex = 0;
+            this.CreateSubImagesButton.Text = "Search Sub Images";
+            this.CreateSubImagesButton.UseVisualStyleBackColor = false;
+            this.CreateSubImagesButton.Click += new System.EventHandler(this.SearchSubImages);
+            this.CreateSubImagesButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.CreateSubImagesButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage1
             // 
@@ -130,6 +148,8 @@ namespace SubImageCreator
             this.SubImage1.TabStop = false;
             this.SubImage1.Visible = false;
             this.SubImage1.Click += new System.EventHandler(this.SubImage1_Click);
+            this.SubImage1.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage1.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage2
             // 
@@ -141,6 +161,8 @@ namespace SubImageCreator
             this.SubImage2.TabStop = false;
             this.SubImage2.Visible = false;
             this.SubImage2.Click += new System.EventHandler(this.SubImage2_Click);
+            this.SubImage2.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage2.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage3
             // 
@@ -152,6 +174,8 @@ namespace SubImageCreator
             this.SubImage3.TabStop = false;
             this.SubImage3.Visible = false;
             this.SubImage3.Click += new System.EventHandler(this.SubImage3_Click);
+            this.SubImage3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage4
             // 
@@ -163,6 +187,8 @@ namespace SubImageCreator
             this.SubImage4.TabStop = false;
             this.SubImage4.Visible = false;
             this.SubImage4.Click += new System.EventHandler(this.SubImage4_Click);
+            this.SubImage4.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage4.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage5
             // 
@@ -174,6 +200,8 @@ namespace SubImageCreator
             this.SubImage5.TabStop = false;
             this.SubImage5.Visible = false;
             this.SubImage5.Click += new System.EventHandler(this.SubImage5_Click);
+            this.SubImage5.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage5.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage6
             // 
@@ -185,6 +213,8 @@ namespace SubImageCreator
             this.SubImage6.TabStop = false;
             this.SubImage6.Visible = false;
             this.SubImage6.Click += new System.EventHandler(this.SubImage6_Click);
+            this.SubImage6.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage6.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage7
             // 
@@ -196,6 +226,8 @@ namespace SubImageCreator
             this.SubImage7.TabStop = false;
             this.SubImage7.Visible = false;
             this.SubImage7.Click += new System.EventHandler(this.SubImage7_Click);
+            this.SubImage7.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage7.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // SubImage8
             // 
@@ -207,6 +239,8 @@ namespace SubImageCreator
             this.SubImage8.TabStop = false;
             this.SubImage8.Visible = false;
             this.SubImage8.Click += new System.EventHandler(this.SubImage8_Click);
+            this.SubImage8.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.SubImage8.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // StatusLabel
             // 
@@ -280,7 +314,7 @@ namespace SubImageCreator
             this.Controls.Add(this.SubImage3);
             this.Controls.Add(this.SubImage2);
             this.Controls.Add(this.SubImage1);
-            this.Controls.Add(this.CreateSubImages);
+            this.Controls.Add(this.CreateSubImagesButton);
             this.Controls.Add(this.CountLabel);
             this.Controls.Add(this.Canvas);
             this.Controls.Add(this.TakeScreenShotButton);

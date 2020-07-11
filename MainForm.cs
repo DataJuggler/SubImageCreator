@@ -49,6 +49,28 @@ namespace SubImageCreator
         
         #region Events
             
+            #region Button_MouseEnter(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Button _ Mouse Enter
+            /// </summary>
+            private void Button_MouseEnter(object sender, EventArgs e)
+            {
+                // Change the cursor to a hand
+                Cursor = Cursors.Hand;
+            }
+            #endregion
+            
+            #region Button_MouseLeave(object sender, EventArgs e)
+            /// <summary>
+            /// event is fired when Button _ Mouse Leave
+            /// </summary>
+            private void Button_MouseLeave(object sender, EventArgs e)
+            {
+                // Change the cursor back to the default pointer
+                Cursor = Cursors.Default;
+            }
+            #endregion
+            
             #region Canvas_Click(object sender, EventArgs e)
             /// <summary>
             /// event is fired when the 'Canvas' is clicked.
@@ -153,7 +175,7 @@ namespace SubImageCreator
                 }
             }
             #endregion
-            
+
             #region Canvas_MouseEnter(object sender, EventArgs e)
             /// <summary>
             /// event is fired when Canvas _ Mouse Enter
@@ -208,67 +230,10 @@ namespace SubImageCreator
             /// </summary>
             private void SizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
             {
-                switch (SizeComboBox.SelectedIndex)
-                {
-                    case 0:
-                    
-                    // Set the size
-                    SubImageSize = 16;
-                    
-                    // required
-                    break;
-                    
-                    case 1:
-                    
-                    // Set the size
-                    SubImageSize = 32;
-                    
-                    // required
-                    break;
-                    
-                    case 2:
-                    
-                    // Set the size
-                    SubImageSize = 48;
-                    
-                    // required
-                    break;
-                    
-                    case 3:
-                    
-                    // Set the size
-                    SubImageSize = 64;
-                    
-                    // required
-                    break;
-                    
-                    case 4:
-                    
-                    // Set the size
-                    SubImageSize = 96;
-                    
-                    // required
-                    break;
-                    
-                    case 5:
-                    
-                    // Set the size
-                    SubImageSize = 128;
-                    
-                    // required
-                    break;
-                    
-                    case 6:
-                    
-                    // Set the size
-                    SubImageSize = 256;
-                    
-                    // required
-                    break;
-                }
-            }
-            #endregion
-            
+
+        }
+        #endregion
+
             #region SubImage1_Click(object sender, EventArgs e)
             /// <summary>
             /// event is fired when the 'SubImage1' is clicked.
@@ -287,7 +252,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(0);
+                    SearchForSubImage(0);
                 }
             }
             #endregion
@@ -310,7 +275,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(1);
+                    SearchForSubImage(1);
                 }
             }
             #endregion
@@ -333,7 +298,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(2);
+                    SearchForSubImage(2);
                 }
             }
             #endregion
@@ -356,7 +321,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(3);
+                    SearchForSubImage(3);
                 }
             }
             #endregion
@@ -379,7 +344,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(4);
+                    SearchForSubImage(4);
                 }
             }
             #endregion
@@ -397,12 +362,12 @@ namespace SubImageCreator
                 if (mouseArgs.Button == MouseButtons.Right)
                 {
                     // Remove the SubImage
-                    RemoveSubImage(6);
+                    RemoveSubImage(5);
                 }
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(6);
+                    SearchForSubImage(5);
                 }
             }
             #endregion
@@ -425,7 +390,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(6);
+                    SearchForSubImage(6);
                 }
             }
             #endregion
@@ -448,7 +413,7 @@ namespace SubImageCreator
                 else if (SearchMode)
                 {
                     // Search for the SubImage at this index
-                    SearchSubImages(7);
+                    SearchForSubImage(7);
                 }
             }
             #endregion
@@ -611,7 +576,11 @@ namespace SubImageCreator
             /// </summary>
             public void Init()
             {
-                // Add these chioces
+                // Setup the buttons
+                TakeScreenShotButton.BackgroundImage = Properties.Resources.WoodButtonWidth1280;
+                CreateSubImagesButton.BackgroundImage = Properties.Resources.WoodButtonWidth1280;
+
+                // Add these chioces                
                 SizeComboBox.Items.Add("16 x 16");
                 SizeComboBox.Items.Add("32 x 32");
                 SizeComboBox.Items.Add("48 x 48");
@@ -664,11 +633,11 @@ namespace SubImageCreator
             }
             #endregion
             
-            #region SearchSubImages(int index)
+            #region SearchForSubImage(int index)
             /// <summary>
-            /// This method Search Sub Images
+            /// This method Searches For A Sub Message
             /// </summary>
-            public void SearchSubImages(int index)
+            public void SearchForSubImage(int index)
             {
                 // local
                 bool found = false;
@@ -853,10 +822,10 @@ namespace SubImageCreator
                 get { return subImageSize; }
                 set { subImageSize = value; }
             }
-            #endregion
-            
         #endregion
-        
+
+        #endregion
+
     }
     #endregion
 
