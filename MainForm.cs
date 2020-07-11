@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataJuggler.PixelDatabase;
+using DataJuggler.UltimateHelper.Core;
 
 #endregion
 
@@ -29,6 +30,7 @@ namespace SubImageCreator
         private PixelDatabase pixelDatabase;
         private int subImageSize;
         private List<Bitmap> subImages;
+        private bool searchMode;
         #endregion
         
         #region Constructor
@@ -123,9 +125,16 @@ namespace SubImageCreator
                             y = bitmap.Height - 1;
                         }
                         
-                        // here we have (approximately) the x & y clicked. Sometimes rounding makes it off a pixel or two possibly
+                        // Sometimes rounding makes it off a pixel or two possibly
+                        // here we have (approximately) the x & y clicked.
+                        
+                        // SubImageSize is just an int such as 64, 256. 
+                        // It must be smaller than the source image, or course.
+
+                        // Top left point
                         Point topLeft = new Point(x, y);
                         
+                        // Size of the new image
                         Rectangle size = new Rectangle(0, 0, SubImageSize, SubImageSize);
                         
                         // Create a subImage
@@ -173,7 +182,23 @@ namespace SubImageCreator
             /// </summary>
             private void SearchSubImages(object sender, EventArgs e)
             {
-                
+                // Toggle the value for SearchMode
+                SearchMode = !SearchMode;
+
+                // change the text of the labels
+                this.InstructionsLabel.Text = "Left click a sub image to search.";
+
+                // if the value for SearchMode is true
+                if (SearchMode)
+                {
+                    // Show that Search Mode is On
+                    StatusLabel.Text = "Search Mode: On";
+                }
+                else
+                {
+                    // Show that Search Mode is Off
+                    StatusLabel.Text = "Search Mode: Off";
+                }
             }
             #endregion
             
@@ -259,6 +284,11 @@ namespace SubImageCreator
                     // Remove the SubImage
                     RemoveSubImage(0);
                 }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(0);
+                }
             }
             #endregion
             
@@ -276,6 +306,11 @@ namespace SubImageCreator
                 {
                     // Remove the SubImage
                     RemoveSubImage(1);
+                }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(1);
                 }
             }
             #endregion
@@ -295,6 +330,11 @@ namespace SubImageCreator
                     // Remove the SubImage
                     RemoveSubImage(2);
                 }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(2);
+                }
             }
             #endregion
             
@@ -312,6 +352,11 @@ namespace SubImageCreator
                 {
                     // Remove the SubImage
                     RemoveSubImage(3);
+                }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(3);
                 }
             }
             #endregion
@@ -331,6 +376,11 @@ namespace SubImageCreator
                     // Remove the SubImage
                     RemoveSubImage(4);
                 }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(4);
+                }
             }
             #endregion
             
@@ -347,7 +397,12 @@ namespace SubImageCreator
                 if (mouseArgs.Button == MouseButtons.Right)
                 {
                     // Remove the SubImage
-                    RemoveSubImage(5);
+                    RemoveSubImage(6);
+                }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(6);
                 }
             }
             #endregion
@@ -367,6 +422,11 @@ namespace SubImageCreator
                     // Remove the SubImage
                     RemoveSubImage(6);
                 }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(6);
+                }
             }
             #endregion
             
@@ -384,6 +444,11 @@ namespace SubImageCreator
                 {
                     // Remove the SubImage
                     RemoveSubImage(7);
+                }
+                else if (SearchMode)
+                {
+                    // Search for the SubImage at this index
+                    SearchSubImages(7);
                 }
             }
             #endregion
@@ -599,6 +664,91 @@ namespace SubImageCreator
             }
             #endregion
             
+            #region SearchSubImages(int index)
+            /// <summary>
+            /// This method Search Sub Images
+            /// </summary>
+            public void SearchSubImages(int index)
+            {
+                // local
+                bool found = false;
+
+                try
+                {
+                    // locals
+                    Bitmap bitmap = null;
+
+                    // set the searchDepth
+                    int searchDepth = 16;
+
+                    // set the size
+                    int squareSize = 12;
+
+                    // set the square color
+                    Color color = Color.Yellow;
+
+                    // Show text
+                    StatusLabel.Text = "Searching...";
+                    StatusLabel.Refresh();
+                    Application.DoEvents();
+
+                    // if the PixelDatabase exists and teh index is in range
+                    if ((HasPixelDatabase) && (index >= 0) && (index < SubImagesCount))
+                    {  
+                        // get this bitMap
+                        bitmap = SubImages[index];
+
+                        // Set the result
+                        SearchResult result = PixelDatabase.SearchForSubImage(bitmap, searchDepth);
+
+                        // if the result was found
+                        if (NullHelper.Exists(result))
+                        {
+                            // create a Yellow Point at the top left hand corner of the subimage
+
+                            string query = "Update" + Environment.NewLine 
+                            + "Set Color " + color.Name + Environment.NewLine
+                            + "Where" + Environment.NewLine
+                            + "X Between " + (result.Point.X - squareSize) + " " + (result.Point.X + squareSize) + Environment.NewLine
+                            + "Y Between " + (result.Point.Y - squareSize) + " " + (result.Point.Y + squareSize);
+
+                           // Show text
+                            StatusLabel.Text = "Showing Best Result:";
+
+                            // was found
+                            found = true;
+                            
+                            // Light up the 
+                            PixelQuery pixelQuery = PixelDatabase.ApplyQuery(query, null);
+
+                            // Update the BackgroundImage
+                            Canvas.BackgroundImage = PixelDatabase.DirectBitmap.Bitmap;
+                            
+                            // Force refresh
+                            Canvas.Invalidate();
+
+                            // Get the count of pixelsUpdated
+                            int pixelsUpdated = pixelQuery.PixelsUpdated;
+                        }                        
+                    }
+                }
+                catch (Exception error)
+                {
+                    // log the errror
+                    DebugHelper.WriteDebugError("SearchSubImages", "MainForm.cs", error);
+                }
+                finally
+                {
+                    // if not found
+                    if (!found)
+                    {
+                        // Show text
+                        StatusLabel.Text = "Not Found.";
+                    }    
+                }
+            }
+            #endregion
+            
         #endregion
         
         #region Properties
@@ -645,6 +795,17 @@ namespace SubImageCreator
             {
                 get { return pixelDatabase; }
                 set { pixelDatabase = value; }
+            }
+            #endregion
+            
+            #region SearchMode
+            /// <summary>
+            /// This property gets or sets the value for 'SearchMode'.
+            /// </summary>
+            public bool SearchMode
+            {
+                get { return searchMode; }
+                set { searchMode = value; }
             }
             #endregion
             
