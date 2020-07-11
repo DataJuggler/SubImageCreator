@@ -438,6 +438,7 @@ namespace SubImageCreator
                 // Sleep for a second
                 System.Threading.Thread.Sleep(1000);
                 
+                // take a screenshot
                 Bitmap bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
                 Graphics graphics = Graphics.FromImage(bitmap);
                 graphics.CopyFromScreen(0, 0, 0, 0, bitmap.Size);
@@ -602,7 +603,7 @@ namespace SubImageCreator
             
             #region Refresh(string message, int pixelsUpdated)
             /// <summary>
-            /// method Refresh
+            /// This is a delegate called by PixelDatabase
             /// </summary>
             private void Refresh(string message, int pixelsUpdated)
             {
