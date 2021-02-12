@@ -1,377 +1,388 @@
 ﻿
-
-#region using statements
-
-
-#endregion
-
 namespace SubImageCreator
 {
-
-    #region class MainForm
-    /// <summary>
-    /// This is the main form for this application.
-    /// </summary>
     partial class MainForm
     {
-        
-        #region Private Variables
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button TakeScreenShotButton;
-        private System.Windows.Forms.Button Canvas;
-        private System.Windows.Forms.Label CountLabel;
-        private System.Windows.Forms.Button CreateSubImagesButton;
-        #endregion
-        
-        #region Methods
-            
-            #region Dispose(bool disposing)
-            /// <summary>
-            ///  Clean up any resources being used.
-            /// </summary>
-            /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-            protected override void Dispose(bool disposing)
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
             {
-                if (disposing && (components != null))
-                {
-                    components.Dispose();
-                }
-                base.Dispose(disposing);
+                components.Dispose();
             }
-            #endregion
-            
-            #region InitializeComponent()
-            /// <summary>
-            ///  Required method for Designer support - do not modify
-            ///  the contents of this method with the code editor.
-            /// </summary>
-            private void InitializeComponent()
-            {
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.TakeScreenShotButton = new System.Windows.Forms.Button();
-            this.Canvas = new System.Windows.Forms.Button();
-            this.CountLabel = new System.Windows.Forms.Label();
+            this.SourceImageControl = new DataJuggler.Win.Controls.LabelTextBoxBrowserControl();
+            this.RowsControl = new DataJuggler.Win.Controls.LabelTextBoxControl();
+            this.ColumnsControl = new DataJuggler.Win.Controls.LabelTextBoxControl();
             this.CreateSubImagesButton = new System.Windows.Forms.Button();
-            this.SubImage1 = new System.Windows.Forms.PictureBox();
-            this.SubImage2 = new System.Windows.Forms.PictureBox();
-            this.SubImage3 = new System.Windows.Forms.PictureBox();
-            this.SubImage4 = new System.Windows.Forms.PictureBox();
-            this.SubImage5 = new System.Windows.Forms.PictureBox();
-            this.SubImage6 = new System.Windows.Forms.PictureBox();
-            this.SubImage7 = new System.Windows.Forms.PictureBox();
-            this.SubImage8 = new System.Windows.Forms.PictureBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
-            this.SizeLabel = new System.Windows.Forms.Label();
-            this.SubImagesCountLabel = new System.Windows.Forms.Label();
-            this.SizeComboBox = new System.Windows.Forms.ComboBox();
-            this.InstructionsLabel = new System.Windows.Forms.Label();
-            this.YouTubeButton = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YouTubeButton)).BeginInit();
+            this.Graph = new System.Windows.Forms.ProgressBar();
+            this.HeightControl = new DataJuggler.Win.Controls.LabelTextBoxControl();
+            this.WidthControl = new DataJuggler.Win.Controls.LabelTextBoxControl();
+            this.ImageWidthControl = new DataJuggler.Win.Controls.LabelLabelControl();
+            this.ImageHeightControl = new DataJuggler.Win.Controls.LabelLabelControl();
+            this.StartImage = new System.Windows.Forms.PictureBox();
+            this.OutputFolderControl = new DataJuggler.Win.Controls.LabelTextBoxBrowserControl();
+            this.ImageNameControl = new DataJuggler.Win.Controls.LabelTextBoxControl();
+            this.InfoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.StartImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // TakeScreenShotButton
+            // SourceImageControl
             // 
-            this.TakeScreenShotButton.BackColor = System.Drawing.Color.Transparent;
-            this.TakeScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TakeScreenShotButton.FlatAppearance.BorderSize = 0;
-            this.TakeScreenShotButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.TakeScreenShotButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.TakeScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TakeScreenShotButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TakeScreenShotButton.Location = new System.Drawing.Point(13, 17);
-            this.TakeScreenShotButton.Margin = new System.Windows.Forms.Padding(4);
-            this.TakeScreenShotButton.Name = "TakeScreenShotButton";
-            this.TakeScreenShotButton.Size = new System.Drawing.Size(212, 40);
-            this.TakeScreenShotButton.TabIndex = 0;
-            this.TakeScreenShotButton.Text = "Take Screenshot";
-            this.TakeScreenShotButton.UseVisualStyleBackColor = false;
-            this.TakeScreenShotButton.Click += new System.EventHandler(this.TakeScreenShotButton_Click);
-            this.TakeScreenShotButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.TakeScreenShotButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.SourceImageControl.BackColor = System.Drawing.Color.Transparent;
+            this.SourceImageControl.BrowseType = DataJuggler.Win.Controls.Enumerations.BrowseTypeEnum.File;
+            this.SourceImageControl.ButtonImage = ((System.Drawing.Image)(resources.GetObject("SourceImageControl.ButtonImage")));
+            this.SourceImageControl.ButtonWidth = 48;
+            this.SourceImageControl.DarkMode = false;
+            this.SourceImageControl.DisabledLabelColor = System.Drawing.Color.Empty;
+            this.SourceImageControl.Editable = false;
+            this.SourceImageControl.EnabledLabelColor = System.Drawing.Color.Empty;
+            this.SourceImageControl.Filter = null;
+            this.SourceImageControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SourceImageControl.HideBrowseButton = false;
+            this.SourceImageControl.LabelBottomMargin = 0;
+            this.SourceImageControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.SourceImageControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SourceImageControl.LabelText = "File To Parse:";
+            this.SourceImageControl.LabelTopMargin = 0;
+            this.SourceImageControl.LabelWidth = 140;
+            this.SourceImageControl.Location = new System.Drawing.Point(44, 21);
+            this.SourceImageControl.Name = "SourceImageControl";
+            this.SourceImageControl.OnTextChangedListener = null;
+            this.SourceImageControl.OpenCallback = null;
+            this.SourceImageControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SourceImageControl.SelectedPath = null;
+            this.SourceImageControl.Size = new System.Drawing.Size(731, 32);
+            this.SourceImageControl.StartPath = null;
+            this.SourceImageControl.TabIndex = 0;
+            this.SourceImageControl.TextBoxBottomMargin = 0;
+            this.SourceImageControl.TextBoxDisabledColor = System.Drawing.Color.Empty;
+            this.SourceImageControl.TextBoxEditableColor = System.Drawing.Color.Empty;
+            this.SourceImageControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SourceImageControl.TextBoxTopMargin = 0;
+            this.SourceImageControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             // 
-            // Canvas
+            // RowsControl
             // 
-            this.Canvas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Canvas.Location = new System.Drawing.Point(246, 96);
-            this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(800, 515);
-            this.Canvas.TabIndex = 2;
-            this.Canvas.TabStop = false;
-            this.Canvas.Click += new System.EventHandler(this.Canvas_Click);
-            this.Canvas.MouseEnter += new System.EventHandler(this.Canvas_MouseEnter);
-            this.Canvas.MouseLeave += new System.EventHandler(this.Canvas_MouseLeave);
+            this.RowsControl.BackColor = System.Drawing.Color.Transparent;
+            this.RowsControl.BottomMargin = 0;
+            this.RowsControl.Editable = true;
+            this.RowsControl.Encrypted = false;
+            this.RowsControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RowsControl.LabelBottomMargin = 0;
+            this.RowsControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.RowsControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RowsControl.LabelText = "Rows:";
+            this.RowsControl.LabelTopMargin = 0;
+            this.RowsControl.LabelWidth = 160;
+            this.RowsControl.Location = new System.Drawing.Point(362, 121);
+            this.RowsControl.MultiLine = false;
+            this.RowsControl.Name = "RowsControl";
+            this.RowsControl.OnTextChangedListener = null;
+            this.RowsControl.PasswordMode = false;
+            this.RowsControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RowsControl.Size = new System.Drawing.Size(281, 32);
+            this.RowsControl.TabIndex = 1;
+            this.RowsControl.TextBoxBottomMargin = 0;
+            this.RowsControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
+            this.RowsControl.TextBoxEditableColor = System.Drawing.Color.White;
+            this.RowsControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RowsControl.TextBoxTopMargin = 0;
+            this.RowsControl.Visible = false;
             // 
-            // CountLabel
+            // ColumnsControl
             // 
-            this.CountLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CountLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.CountLabel.Location = new System.Drawing.Point(12, 105);
-            this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(113, 20);
-            this.CountLabel.TabIndex = 4;
-            this.CountLabel.Text = "Sub Images:";
-            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ColumnsControl.BackColor = System.Drawing.Color.Transparent;
+            this.ColumnsControl.BottomMargin = 0;
+            this.ColumnsControl.Editable = true;
+            this.ColumnsControl.Encrypted = false;
+            this.ColumnsControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColumnsControl.LabelBottomMargin = 0;
+            this.ColumnsControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.ColumnsControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ColumnsControl.LabelText = "Columns:";
+            this.ColumnsControl.LabelTopMargin = 0;
+            this.ColumnsControl.LabelWidth = 160;
+            this.ColumnsControl.Location = new System.Drawing.Point(362, 171);
+            this.ColumnsControl.MultiLine = false;
+            this.ColumnsControl.Name = "ColumnsControl";
+            this.ColumnsControl.OnTextChangedListener = null;
+            this.ColumnsControl.PasswordMode = false;
+            this.ColumnsControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ColumnsControl.Size = new System.Drawing.Size(281, 32);
+            this.ColumnsControl.TabIndex = 2;
+            this.ColumnsControl.TextBoxBottomMargin = 0;
+            this.ColumnsControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
+            this.ColumnsControl.TextBoxEditableColor = System.Drawing.Color.White;
+            this.ColumnsControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColumnsControl.TextBoxTopMargin = 0;
+            this.ColumnsControl.Visible = false;
             // 
             // CreateSubImagesButton
             // 
             this.CreateSubImagesButton.BackColor = System.Drawing.Color.Transparent;
+            this.CreateSubImagesButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CreateSubImagesButton.BackgroundImage")));
             this.CreateSubImagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CreateSubImagesButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.CreateSubImagesButton.FlatAppearance.BorderSize = 0;
             this.CreateSubImagesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.CreateSubImagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.CreateSubImagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateSubImagesButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CreateSubImagesButton.Location = new System.Drawing.Point(13, 580);
-            this.CreateSubImagesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateSubImagesButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CreateSubImagesButton.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.CreateSubImagesButton.Location = new System.Drawing.Point(294, 355);
             this.CreateSubImagesButton.Name = "CreateSubImagesButton";
-            this.CreateSubImagesButton.Size = new System.Drawing.Size(212, 40);
-            this.CreateSubImagesButton.TabIndex = 0;
-            this.CreateSubImagesButton.Text = "Search Sub Images";
+            this.CreateSubImagesButton.Size = new System.Drawing.Size(231, 44);
+            this.CreateSubImagesButton.TabIndex = 3;
+            this.CreateSubImagesButton.Text = "Create Sub Images";
             this.CreateSubImagesButton.UseVisualStyleBackColor = false;
-            this.CreateSubImagesButton.Click += new System.EventHandler(this.SearchSubImages);
-            this.CreateSubImagesButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.CreateSubImagesButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.CreateSubImagesButton.Visible = false;
+            this.CreateSubImagesButton.Click += new System.EventHandler(this.CreateSubImagesButton_Click);
+            this.CreateSubImagesButton.MouseEnter += new System.EventHandler(this.CreateSubImagesButton_MouseEnter);
+            this.CreateSubImagesButton.MouseLeave += new System.EventHandler(this.CreateSubImagesButton_MouseLeave);
             // 
-            // SubImage1
+            // Graph
             // 
-            this.SubImage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage1.Location = new System.Drawing.Point(13, 141);
-            this.SubImage1.Name = "SubImage1";
-            this.SubImage1.Size = new System.Drawing.Size(96, 96);
-            this.SubImage1.TabIndex = 2;
-            this.SubImage1.TabStop = false;
-            this.SubImage1.Visible = false;
-            this.SubImage1.Click += new System.EventHandler(this.SubImage1_Click);
-            this.SubImage1.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage1.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.Graph.Location = new System.Drawing.Point(53, 422);
+            this.Graph.Name = "Graph";
+            this.Graph.Size = new System.Drawing.Size(712, 23);
+            this.Graph.TabIndex = 4;
+            this.Graph.Visible = false;
             // 
-            // SubImage2
+            // HeightControl
             // 
-            this.SubImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage2.Location = new System.Drawing.Point(128, 141);
-            this.SubImage2.Name = "SubImage2";
-            this.SubImage2.Size = new System.Drawing.Size(96, 96);
-            this.SubImage2.TabIndex = 2;
-            this.SubImage2.TabStop = false;
-            this.SubImage2.Visible = false;
-            this.SubImage2.Click += new System.EventHandler(this.SubImage2_Click);
-            this.SubImage2.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage2.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.HeightControl.BackColor = System.Drawing.Color.Transparent;
+            this.HeightControl.BottomMargin = 0;
+            this.HeightControl.Editable = true;
+            this.HeightControl.Encrypted = false;
+            this.HeightControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HeightControl.LabelBottomMargin = 0;
+            this.HeightControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.HeightControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HeightControl.LabelText = "Height:";
+            this.HeightControl.LabelTopMargin = 0;
+            this.HeightControl.LabelWidth = 160;
+            this.HeightControl.Location = new System.Drawing.Point(30, 171);
+            this.HeightControl.MultiLine = false;
+            this.HeightControl.Name = "HeightControl";
+            this.HeightControl.OnTextChangedListener = null;
+            this.HeightControl.PasswordMode = false;
+            this.HeightControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.HeightControl.Size = new System.Drawing.Size(281, 32);
+            this.HeightControl.TabIndex = 6;
+            this.HeightControl.TextBoxBottomMargin = 0;
+            this.HeightControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
+            this.HeightControl.TextBoxEditableColor = System.Drawing.Color.White;
+            this.HeightControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HeightControl.TextBoxTopMargin = 0;
+            this.HeightControl.Visible = false;
             // 
-            // SubImage3
+            // WidthControl
             // 
-            this.SubImage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage3.Location = new System.Drawing.Point(12, 243);
-            this.SubImage3.Name = "SubImage3";
-            this.SubImage3.Size = new System.Drawing.Size(96, 96);
-            this.SubImage3.TabIndex = 2;
-            this.SubImage3.TabStop = false;
-            this.SubImage3.Visible = false;
-            this.SubImage3.Click += new System.EventHandler(this.SubImage3_Click);
-            this.SubImage3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.WidthControl.BackColor = System.Drawing.Color.Transparent;
+            this.WidthControl.BottomMargin = 0;
+            this.WidthControl.Editable = true;
+            this.WidthControl.Encrypted = false;
+            this.WidthControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WidthControl.LabelBottomMargin = 0;
+            this.WidthControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.WidthControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.WidthControl.LabelText = "Width:";
+            this.WidthControl.LabelTopMargin = 0;
+            this.WidthControl.LabelWidth = 160;
+            this.WidthControl.Location = new System.Drawing.Point(30, 121);
+            this.WidthControl.MultiLine = false;
+            this.WidthControl.Name = "WidthControl";
+            this.WidthControl.OnTextChangedListener = null;
+            this.WidthControl.PasswordMode = false;
+            this.WidthControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.WidthControl.Size = new System.Drawing.Size(281, 32);
+            this.WidthControl.TabIndex = 5;
+            this.WidthControl.TextBoxBottomMargin = 0;
+            this.WidthControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
+            this.WidthControl.TextBoxEditableColor = System.Drawing.Color.White;
+            this.WidthControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WidthControl.TextBoxTopMargin = 0;
+            this.WidthControl.Visible = false;
             // 
-            // SubImage4
+            // ImageWidthControl
             // 
-            this.SubImage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage4.Location = new System.Drawing.Point(128, 243);
-            this.SubImage4.Name = "SubImage4";
-            this.SubImage4.Size = new System.Drawing.Size(96, 96);
-            this.SubImage4.TabIndex = 2;
-            this.SubImage4.TabStop = false;
-            this.SubImage4.Visible = false;
-            this.SubImage4.Click += new System.EventHandler(this.SubImage4_Click);
-            this.SubImage4.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage4.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ImageWidthControl.BackColor = System.Drawing.Color.Transparent;
+            this.ImageWidthControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageWidthControl.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.ImageWidthControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.ImageWidthControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ImageWidthControl.LabelText = "Image Width:";
+            this.ImageWidthControl.LabelWidth = 160;
+            this.ImageWidthControl.Location = new System.Drawing.Point(30, 71);
+            this.ImageWidthControl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ImageWidthControl.Name = "ImageWidthControl";
+            this.ImageWidthControl.Size = new System.Drawing.Size(281, 32);
+            this.ImageWidthControl.TabIndex = 7;
+            this.ImageWidthControl.ValueLabelColor = System.Drawing.Color.LemonChiffon;
+            this.ImageWidthControl.ValueLabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageWidthControl.Visible = false;
             // 
-            // SubImage5
+            // ImageHeightControl
             // 
-            this.SubImage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage5.Location = new System.Drawing.Point(12, 345);
-            this.SubImage5.Name = "SubImage5";
-            this.SubImage5.Size = new System.Drawing.Size(96, 96);
-            this.SubImage5.TabIndex = 2;
-            this.SubImage5.TabStop = false;
-            this.SubImage5.Visible = false;
-            this.SubImage5.Click += new System.EventHandler(this.SubImage5_Click);
-            this.SubImage5.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage5.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ImageHeightControl.BackColor = System.Drawing.Color.Transparent;
+            this.ImageHeightControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageHeightControl.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.ImageHeightControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.ImageHeightControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ImageHeightControl.LabelText = "Image height:";
+            this.ImageHeightControl.LabelWidth = 160;
+            this.ImageHeightControl.Location = new System.Drawing.Point(362, 71);
+            this.ImageHeightControl.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ImageHeightControl.Name = "ImageHeightControl";
+            this.ImageHeightControl.Size = new System.Drawing.Size(281, 32);
+            this.ImageHeightControl.TabIndex = 8;
+            this.ImageHeightControl.ValueLabelColor = System.Drawing.Color.LemonChiffon;
+            this.ImageHeightControl.ValueLabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageHeightControl.Visible = false;
             // 
-            // SubImage6
+            // StartImage
             // 
-            this.SubImage6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage6.Location = new System.Drawing.Point(128, 345);
-            this.SubImage6.Name = "SubImage6";
-            this.SubImage6.Size = new System.Drawing.Size(96, 96);
-            this.SubImage6.TabIndex = 2;
-            this.SubImage6.TabStop = false;
-            this.SubImage6.Visible = false;
-            this.SubImage6.Click += new System.EventHandler(this.SubImage6_Click);
-            this.SubImage6.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage6.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.StartImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StartImage.BackgroundImage")));
+            this.StartImage.Location = new System.Drawing.Point(89, 120);
+            this.StartImage.Name = "StartImage";
+            this.StartImage.Size = new System.Drawing.Size(640, 160);
+            this.StartImage.TabIndex = 9;
+            this.StartImage.TabStop = false;
             // 
-            // SubImage7
+            // OutputFolderControl
             // 
-            this.SubImage7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage7.Location = new System.Drawing.Point(12, 447);
-            this.SubImage7.Name = "SubImage7";
-            this.SubImage7.Size = new System.Drawing.Size(96, 96);
-            this.SubImage7.TabIndex = 2;
-            this.SubImage7.TabStop = false;
-            this.SubImage7.Visible = false;
-            this.SubImage7.Click += new System.EventHandler(this.SubImage7_Click);
-            this.SubImage7.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage7.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.OutputFolderControl.BackColor = System.Drawing.Color.Transparent;
+            this.OutputFolderControl.BrowseType = DataJuggler.Win.Controls.Enumerations.BrowseTypeEnum.Folder;
+            this.OutputFolderControl.ButtonImage = ((System.Drawing.Image)(resources.GetObject("OutputFolderControl.ButtonImage")));
+            this.OutputFolderControl.ButtonWidth = 48;
+            this.OutputFolderControl.DarkMode = false;
+            this.OutputFolderControl.DisabledLabelColor = System.Drawing.Color.Empty;
+            this.OutputFolderControl.Editable = false;
+            this.OutputFolderControl.EnabledLabelColor = System.Drawing.Color.Empty;
+            this.OutputFolderControl.Filter = null;
+            this.OutputFolderControl.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OutputFolderControl.HideBrowseButton = false;
+            this.OutputFolderControl.LabelBottomMargin = 0;
+            this.OutputFolderControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.OutputFolderControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OutputFolderControl.LabelText = "Output Folder:";
+            this.OutputFolderControl.LabelTopMargin = 0;
+            this.OutputFolderControl.LabelWidth = 140;
+            this.OutputFolderControl.Location = new System.Drawing.Point(44, 221);
+            this.OutputFolderControl.Name = "OutputFolderControl";
+            this.OutputFolderControl.OnTextChangedListener = null;
+            this.OutputFolderControl.OpenCallback = null;
+            this.OutputFolderControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.OutputFolderControl.SelectedPath = null;
+            this.OutputFolderControl.Size = new System.Drawing.Size(731, 32);
+            this.OutputFolderControl.StartPath = null;
+            this.OutputFolderControl.TabIndex = 10;
+            this.OutputFolderControl.TextBoxBottomMargin = 0;
+            this.OutputFolderControl.TextBoxDisabledColor = System.Drawing.Color.Empty;
+            this.OutputFolderControl.TextBoxEditableColor = System.Drawing.Color.Empty;
+            this.OutputFolderControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OutputFolderControl.TextBoxTopMargin = 0;
+            this.OutputFolderControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             // 
-            // SubImage8
+            // ImageNameControl
             // 
-            this.SubImage8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SubImage8.Location = new System.Drawing.Point(128, 447);
-            this.SubImage8.Name = "SubImage8";
-            this.SubImage8.Size = new System.Drawing.Size(96, 96);
-            this.SubImage8.TabIndex = 2;
-            this.SubImage8.TabStop = false;
-            this.SubImage8.Visible = false;
-            this.SubImage8.Click += new System.EventHandler(this.SubImage8_Click);
-            this.SubImage8.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.SubImage8.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.ImageNameControl.BackColor = System.Drawing.Color.Transparent;
+            this.ImageNameControl.BottomMargin = 0;
+            this.ImageNameControl.Editable = true;
+            this.ImageNameControl.Encrypted = false;
+            this.ImageNameControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageNameControl.LabelBottomMargin = 0;
+            this.ImageNameControl.LabelColor = System.Drawing.Color.LemonChiffon;
+            this.ImageNameControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ImageNameControl.LabelText = "* Image Name:";
+            this.ImageNameControl.LabelTopMargin = 0;
+            this.ImageNameControl.LabelWidth = 160;
+            this.ImageNameControl.Location = new System.Drawing.Point(24, 271);
+            this.ImageNameControl.MultiLine = false;
+            this.ImageNameControl.Name = "ImageNameControl";
+            this.ImageNameControl.OnTextChangedListener = null;
+            this.ImageNameControl.PasswordMode = false;
+            this.ImageNameControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ImageNameControl.Size = new System.Drawing.Size(751, 32);
+            this.ImageNameControl.TabIndex = 11;
+            this.ImageNameControl.TextBoxBottomMargin = 0;
+            this.ImageNameControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
+            this.ImageNameControl.TextBoxEditableColor = System.Drawing.Color.White;
+            this.ImageNameControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageNameControl.TextBoxTopMargin = 0;
             // 
-            // StatusLabel
+            // InfoLabel
             // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.StatusLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.StatusLabel.Location = new System.Drawing.Point(246, 17);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(63, 18);
-            this.StatusLabel.TabIndex = 5;
-            this.StatusLabel.Text = "Ready.";
-            // 
-            // SizeLabel
-            // 
-            this.SizeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.SizeLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.SizeLabel.Location = new System.Drawing.Point(12, 75);
-            this.SizeLabel.Name = "SizeLabel";
-            this.SizeLabel.Size = new System.Drawing.Size(113, 20);
-            this.SizeLabel.TabIndex = 4;
-            this.SizeLabel.Text = "Size:";
-            this.SizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SubImagesCountLabel
-            // 
-            this.SubImagesCountLabel.BackColor = System.Drawing.Color.Transparent;
-            this.SubImagesCountLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.SubImagesCountLabel.Location = new System.Drawing.Point(127, 105);
-            this.SubImagesCountLabel.Name = "SubImagesCountLabel";
-            this.SubImagesCountLabel.Size = new System.Drawing.Size(46, 20);
-            this.SubImagesCountLabel.TabIndex = 4;
-            this.SubImagesCountLabel.Text = "0";
-            this.SubImagesCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // SizeComboBox
-            // 
-            this.SizeComboBox.FormattingEnabled = true;
-            this.SizeComboBox.Location = new System.Drawing.Point(127, 71);
-            this.SizeComboBox.Name = "SizeComboBox";
-            this.SizeComboBox.Size = new System.Drawing.Size(52, 26);
-            this.SizeComboBox.TabIndex = 6;
-            this.SizeComboBox.SelectedIndexChanged += new System.EventHandler(this.SizeComboBox_SelectedIndexChanged);
-            // 
-            // InstructionsLabel
-            // 
-            this.InstructionsLabel.AutoSize = true;
-            this.InstructionsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.InstructionsLabel.ForeColor = System.Drawing.Color.LemonChiffon;
-            this.InstructionsLabel.Location = new System.Drawing.Point(13, 641);
-            this.InstructionsLabel.Name = "InstructionsLabel";
-            this.InstructionsLabel.Size = new System.Drawing.Size(294, 18);
-            this.InstructionsLabel.TabIndex = 5;
-            this.InstructionsLabel.Text = "Right click a sub image to remove.";
-            // 
-            // YouTubeButton
-            // 
-            this.YouTubeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.YouTubeButton.Location = new System.Drawing.Point(916, 16);
-            this.YouTubeButton.Name = "YouTubeButton";
-            this.YouTubeButton.Size = new System.Drawing.Size(128, 64);
-            this.YouTubeButton.TabIndex = 2;
-            this.YouTubeButton.TabStop = false;
-            this.YouTubeButton.Visible = false;
-            this.YouTubeButton.Click += new System.EventHandler(this.YouTubeButton_Click);
-            this.YouTubeButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.YouTubeButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            this.InfoLabel.ForeColor = System.Drawing.Color.LemonChiffon;
+            this.InfoLabel.Location = new System.Drawing.Point(44, 299);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(731, 32);
+            this.InfoLabel.TabIndex = 12;
+            this.InfoLabel.Text = "* Files will be created as ImageName1, ImageName2, etc.";
+            this.InfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1072, 669);
-            this.Controls.Add(this.YouTubeButton);
-            this.Controls.Add(this.InstructionsLabel);
-            this.Controls.Add(this.SizeComboBox);
-            this.Controls.Add(this.SubImagesCountLabel);
-            this.Controls.Add(this.SizeLabel);
-            this.Controls.Add(this.StatusLabel);
-            this.Controls.Add(this.SubImage8);
-            this.Controls.Add(this.SubImage7);
-            this.Controls.Add(this.SubImage6);
-            this.Controls.Add(this.SubImage5);
-            this.Controls.Add(this.SubImage4);
-            this.Controls.Add(this.SubImage3);
-            this.Controls.Add(this.SubImage2);
-            this.Controls.Add(this.SubImage1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(819, 466);
+            this.Controls.Add(this.InfoLabel);
+            this.Controls.Add(this.ImageNameControl);
+            this.Controls.Add(this.OutputFolderControl);
+            this.Controls.Add(this.StartImage);
+            this.Controls.Add(this.ImageHeightControl);
+            this.Controls.Add(this.ImageWidthControl);
+            this.Controls.Add(this.WidthControl);
+            this.Controls.Add(this.Graph);
             this.Controls.Add(this.CreateSubImagesButton);
-            this.Controls.Add(this.CountLabel);
-            this.Controls.Add(this.Canvas);
-            this.Controls.Add(this.TakeScreenShotButton);
+            this.Controls.Add(this.ColumnsControl);
+            this.Controls.Add(this.RowsControl);
+            this.Controls.Add(this.SourceImageControl);
+            this.Controls.Add(this.HeightControl);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sub Image Creator";
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SubImage8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.YouTubeButton)).EndInit();
+            this.Text = "Image Parser";
+            ((System.ComponentModel.ISupportInitialize)(this.StartImage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
-            }
-        #endregion
+        }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox SubImage1;
-        private System.Windows.Forms.PictureBox SubImage2;
-        private System.Windows.Forms.PictureBox SubImage3;
-        private System.Windows.Forms.PictureBox SubImage4;
-        private System.Windows.Forms.PictureBox SubImage5;
-        private System.Windows.Forms.PictureBox SubImage6;
-        private System.Windows.Forms.PictureBox SubImage7;
-        private System.Windows.Forms.PictureBox SubImage8;
-        private System.Windows.Forms.Label StatusLabel;
-        private System.Windows.Forms.Label SizeLabel;
-        private System.Windows.Forms.Label SubImagesCountLabel;
-        private System.Windows.Forms.ComboBox SizeComboBox;
-        private System.Windows.Forms.Label InstructionsLabel;
-        private System.Windows.Forms.PictureBox YouTubeButton;
+        private DataJuggler.Win.Controls.LabelTextBoxBrowserControl SourceImageControl;
+        private DataJuggler.Win.Controls.LabelTextBoxControl RowsControl;
+        private DataJuggler.Win.Controls.LabelTextBoxControl ColumnsControl;
+        private System.Windows.Forms.Button CreateSubImagesButton;
+        private System.Windows.Forms.ProgressBar Graph;
+        private DataJuggler.Win.Controls.LabelTextBoxControl HeightControl;
+        private DataJuggler.Win.Controls.LabelTextBoxControl WidthControl;
+        private DataJuggler.Win.Controls.LabelLabelControl ImageWidthControl;
+        private DataJuggler.Win.Controls.LabelLabelControl ImageHeightControl;
+        private System.Windows.Forms.PictureBox StartImage;
+        private DataJuggler.Win.Controls.LabelTextBoxBrowserControl OutputFolderControl;
+        private DataJuggler.Win.Controls.LabelTextBoxControl ImageNameControl;
+        private System.Windows.Forms.Label InfoLabel;
     }
-    #endregion
-
 }
+

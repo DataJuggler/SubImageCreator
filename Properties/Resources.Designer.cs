@@ -63,9 +63,9 @@ namespace SubImageCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Black {
+        internal static System.Drawing.Bitmap Black_Textured_Small {
             get {
-                object obj = ResourceManager.GetObject("Black", resourceCulture);
+                object obj = ResourceManager.GetObject("Black Textured Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,29 +73,9 @@ namespace SubImageCreator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Deep_Black {
+        internal static System.Drawing.Bitmap Select_An_Image_To_Begin {
             get {
-                object obj = ResourceManager.GetObject("Deep Black", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WoodButtonWidth1280 {
-            get {
-                object obj = ResourceManager.GetObject("WoodButtonWidth1280", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap YouTube {
-            get {
-                object obj = ResourceManager.GetObject("YouTube", resourceCulture);
+                object obj = ResourceManager.GetObject("Select An Image To Begin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
