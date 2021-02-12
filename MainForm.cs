@@ -67,8 +67,11 @@ namespace SubImageCreator
                     int rows = RowsControl.IntValue;
                     int columns = ColumnsControl.IntValue;
                     Graph.Maximum = rows * columns;
-                    int width = WidthControl.IntValue;
-                    int height = HeightControl.IntValue;
+                    
+                    // hack. I think the reason is a 0 based start versus a 1 based start, but the last row is 
+                    // not copied, so I am adding 1 to fix it. I will look at the Nuget package if this works.
+                    int height = HeightControl.IntValue + 1;
+                    int width = WidthControl.IntValue + 1;
                 
                     // iterate the rows
                     for (int row = 0; row < 6; row++)
@@ -157,6 +160,10 @@ namespace SubImageCreator
                             // display the height and width
                             this.ImageHeightControl.Text = PixelDatabase.Height.ToString();
                             this.ImageWidthControl.Text = PixelDatabase.Width.ToString();
+
+                            // Display the name as a helper
+                            FileInfo fileInfo = new FileInfo(text);
+                            this.ImageNameControl.Text = fileInfo.Name;
                         }
                     }
                     else if (sender.Name == this.WidthControl.Name)
