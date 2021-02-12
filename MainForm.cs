@@ -70,8 +70,8 @@ namespace SubImageCreator
                     
                     // hack. I think the reason is a 0 based start versus a 1 based start, but the last row is 
                     // not copied, so I am adding 1 to fix it. I will look at the Nuget package if this works.
-                    int height = HeightControl.IntValue + 1;
-                    int width = WidthControl.IntValue + 1;
+                    int height = HeightControl.IntValue;
+                    int width = WidthControl.IntValue;
                 
                     // iterate the rows
                     for (int row = 0; row < 6; row++)
