@@ -2,7 +2,7 @@
 This is a sample Windows Forms project for .Net 5, that uses my Nuget package DataJuggler.PixelDatabase to demonstrates creating sub images from
 a source image in whatever size you prefer.
 
-This is useful for parsing icon sets or other images that you want each file to be saved as their own image.
+This is useful for parsing icon sets or other images that you want each image to be saved as their own file.
 
 
 Here is a short video:
