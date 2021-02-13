@@ -67,11 +67,11 @@ namespace SubImageCreator
                     int rows = RowsControl.IntValue;
                     int columns = ColumnsControl.IntValue;
                     Graph.Maximum = rows * columns;
-                    
-                    // hack. I think the reason is a 0 based start versus a 1 based start, but the last row is 
-                    // not copied, so I am adding 1 to fix it. I will look at the Nuget package if this works.
                     int height = HeightControl.IntValue;
                     int width = WidthControl.IntValue;
+
+                    // Get the extension
+                    FileInfo fileInfo = new FileInfo(imagePath);
                 
                     // iterate the rows
                     for (int row = 0; row < 6; row++)
@@ -94,7 +94,7 @@ namespace SubImageCreator
                             string imageName = this.ImageNameControl.Text;
 
                             // set the fileName
-                            fileName = Path.Combine(this.OutputFolderControl.Text, imageName + imageNumber + ".png");
+                            fileName = Path.Combine(this.OutputFolderControl.Text, imageName + imageNumber + "." + fileInfo.Extension);
 
                             // Save the file
                             image.Save(fileName);
