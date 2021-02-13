@@ -360,6 +360,7 @@ namespace SubImageCreator
             this.Controls.Add(this.SourceImageControl);
             this.Controls.Add(this.HeightControl);
             this.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Image Parser";

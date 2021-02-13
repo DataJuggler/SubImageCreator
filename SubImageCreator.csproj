@@ -4,10 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Art.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.PixelDatabase" Version="1.5.0.1" />
+    <PackageReference Include="DataJuggler.PixelDatabase" Version="1.5.0.2" />
     <PackageReference Include="DataJuggler.UltimateHelper" Version="1.5.5" />
     <PackageReference Include="DataJuggler.Win.Controls" Version="5.7.4" />
   </ItemGroup>
