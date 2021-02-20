@@ -90,11 +90,11 @@ namespace SubImageCreator
                             // create the subImage
                             Image image = pixelDatabase.CreateSubImage(topLeft, size);
 
-                            // get the new file name
-                            string imageName = this.ImageNameControl.Text;
+                            // get the new file name without the extension
+                            string imageName = this.ImageNameControl.Text.Replace(fileInfo.Extension, "");
 
                             // set the fileName
-                            fileName = Path.Combine(this.OutputFolderControl.Text, imageName + imageNumber + "." + fileInfo.Extension);
+                            fileName = Path.Combine(this.OutputFolderControl.Text, imageName + imageNumber + fileInfo.Extension);
 
                             // Save the file
                             image.Save(fileName);
