@@ -74,10 +74,10 @@ namespace SubImageCreator
                     FileInfo fileInfo = new FileInfo(imagePath);
                 
                     // iterate the rows
-                    for (int row = 0; row < 6; row++)
+                    for (int row = 0; row < RowsControl.IntValue; row++)
                     {
                         // iterate the columns
-                        for (int column = 0; column < 6; column++)
+                        for (int column = 0; column < HeightControl.IntValue; column++)
                         {
                             // Increment the value for imageNumber
                             imageNumber++;
