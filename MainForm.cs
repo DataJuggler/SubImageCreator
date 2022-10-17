@@ -174,7 +174,7 @@ namespace SubImageCreator
                             double columns = PixelDatabase.Width / WidthControl.IntValue;
 
                             // Display the rows
-                            this.ColumnsControl.Text = this.Text = Math.Floor(columns).ToString();
+                            this.ColumnsControl.Text = Math.Floor(columns).ToString();
                         }
                     }
                     else if (sender.Name == this.HeightControl.Name)
@@ -186,7 +186,7 @@ namespace SubImageCreator
                             double rows = PixelDatabase.Height / HeightControl.IntValue;
 
                             // Display the columns
-                            this.RowsControl.Text = this.Text = Math.Floor(rows).ToString();
+                            this.RowsControl.Text = Math.Floor(rows).ToString();
                         }
                     }
                 }
