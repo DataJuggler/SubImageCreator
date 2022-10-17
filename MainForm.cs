@@ -77,13 +77,13 @@ namespace SubImageCreator
                     for (int row = 0; row < RowsControl.IntValue; row++)
                     {
                         // iterate the columns
-                        for (int column = 0; column < HeightControl.IntValue; column++)
-                        {
+                        for (int column = 0; column < ColumnsControl.IntValue; column++)
+                        {  
                             // Increment the value for imageNumber
                             imageNumber++;
-                        
+
                             left = column * width;
-                            top = row * width;
+                            top = row * height;
                             topLeft = new Point(left, top);
                             size = new Rectangle(left, top, width, height);
 
