@@ -50,6 +50,7 @@ namespace SubImageCreator
             // 
             this.SourceImageControl.BackColor = System.Drawing.Color.Transparent;
             this.SourceImageControl.BrowseType = DataJuggler.Win.Controls.Enumerations.BrowseTypeEnum.File;
+            this.SourceImageControl.ButtonColor = System.Drawing.Color.LemonChiffon;
             this.SourceImageControl.ButtonImage = ((System.Drawing.Image)(resources.GetObject("SourceImageControl.ButtonImage")));
             this.SourceImageControl.ButtonWidth = 48;
             this.SourceImageControl.DarkMode = false;
@@ -88,6 +89,7 @@ namespace SubImageCreator
             this.RowsControl.Editable = true;
             this.RowsControl.Encrypted = false;
             this.RowsControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RowsControl.Inititialized = true;
             this.RowsControl.LabelBottomMargin = 0;
             this.RowsControl.LabelColor = System.Drawing.Color.LemonChiffon;
             this.RowsControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -107,6 +109,7 @@ namespace SubImageCreator
             this.RowsControl.TextBoxEditableColor = System.Drawing.Color.White;
             this.RowsControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RowsControl.TextBoxTopMargin = 0;
+            this.RowsControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             this.RowsControl.Visible = false;
             // 
             // ColumnsControl
@@ -116,6 +119,7 @@ namespace SubImageCreator
             this.ColumnsControl.Editable = true;
             this.ColumnsControl.Encrypted = false;
             this.ColumnsControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColumnsControl.Inititialized = true;
             this.ColumnsControl.LabelBottomMargin = 0;
             this.ColumnsControl.LabelColor = System.Drawing.Color.LemonChiffon;
             this.ColumnsControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -135,6 +139,7 @@ namespace SubImageCreator
             this.ColumnsControl.TextBoxEditableColor = System.Drawing.Color.White;
             this.ColumnsControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ColumnsControl.TextBoxTopMargin = 0;
+            this.ColumnsControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             this.ColumnsControl.Visible = false;
             // 
             // CreateSubImagesButton
@@ -175,13 +180,14 @@ namespace SubImageCreator
             this.HeightControl.Editable = true;
             this.HeightControl.Encrypted = false;
             this.HeightControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.HeightControl.Inititialized = true;
             this.HeightControl.LabelBottomMargin = 0;
             this.HeightControl.LabelColor = System.Drawing.Color.LemonChiffon;
             this.HeightControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HeightControl.LabelText = "Height:";
             this.HeightControl.LabelTopMargin = 0;
             this.HeightControl.LabelWidth = 160;
-            this.HeightControl.Location = new System.Drawing.Point(30, 171);
+            this.HeightControl.Location = new System.Drawing.Point(30, 121);
             this.HeightControl.MultiLine = false;
             this.HeightControl.Name = "HeightControl";
             this.HeightControl.OnTextChangedListener = null;
@@ -194,6 +200,7 @@ namespace SubImageCreator
             this.HeightControl.TextBoxEditableColor = System.Drawing.Color.White;
             this.HeightControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.HeightControl.TextBoxTopMargin = 0;
+            this.HeightControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             this.HeightControl.Visible = false;
             // 
             // WidthControl
@@ -203,13 +210,14 @@ namespace SubImageCreator
             this.WidthControl.Editable = true;
             this.WidthControl.Encrypted = false;
             this.WidthControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WidthControl.Inititialized = true;
             this.WidthControl.LabelBottomMargin = 0;
             this.WidthControl.LabelColor = System.Drawing.Color.LemonChiffon;
             this.WidthControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.WidthControl.LabelText = "Width:";
             this.WidthControl.LabelTopMargin = 0;
             this.WidthControl.LabelWidth = 160;
-            this.WidthControl.Location = new System.Drawing.Point(30, 121);
+            this.WidthControl.Location = new System.Drawing.Point(30, 171);
             this.WidthControl.MultiLine = false;
             this.WidthControl.Name = "WidthControl";
             this.WidthControl.OnTextChangedListener = null;
@@ -222,6 +230,7 @@ namespace SubImageCreator
             this.WidthControl.TextBoxEditableColor = System.Drawing.Color.White;
             this.WidthControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.WidthControl.TextBoxTopMargin = 0;
+            this.WidthControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             this.WidthControl.Visible = false;
             // 
             // ImageWidthControl
@@ -263,7 +272,7 @@ namespace SubImageCreator
             // StartImage
             // 
             this.StartImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StartImage.BackgroundImage")));
-            this.StartImage.Location = new System.Drawing.Point(89, 120);
+            this.StartImage.Location = new System.Drawing.Point(90, 120);
             this.StartImage.Name = "StartImage";
             this.StartImage.Size = new System.Drawing.Size(640, 160);
             this.StartImage.TabIndex = 9;
@@ -273,6 +282,7 @@ namespace SubImageCreator
             // 
             this.OutputFolderControl.BackColor = System.Drawing.Color.Transparent;
             this.OutputFolderControl.BrowseType = DataJuggler.Win.Controls.Enumerations.BrowseTypeEnum.Folder;
+            this.OutputFolderControl.ButtonColor = System.Drawing.Color.LemonChiffon;
             this.OutputFolderControl.ButtonImage = ((System.Drawing.Image)(resources.GetObject("OutputFolderControl.ButtonImage")));
             this.OutputFolderControl.ButtonWidth = 48;
             this.OutputFolderControl.DarkMode = false;
@@ -311,6 +321,7 @@ namespace SubImageCreator
             this.ImageNameControl.Editable = true;
             this.ImageNameControl.Encrypted = false;
             this.ImageNameControl.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ImageNameControl.Inititialized = true;
             this.ImageNameControl.LabelBottomMargin = 0;
             this.ImageNameControl.LabelColor = System.Drawing.Color.LemonChiffon;
             this.ImageNameControl.LabelFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -330,6 +341,7 @@ namespace SubImageCreator
             this.ImageNameControl.TextBoxEditableColor = System.Drawing.Color.White;
             this.ImageNameControl.TextBoxFont = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ImageNameControl.TextBoxTopMargin = 0;
+            this.ImageNameControl.Theme = DataJuggler.Win.Controls.Enumerations.ThemeEnum.Dark;
             // 
             // InfoLabel
             // 
@@ -363,7 +375,7 @@ namespace SubImageCreator
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Image Parser";
+            this.Text = "Sub Image Creator 1.1.0";
             ((System.ComponentModel.ISupportInitialize)(this.StartImage)).EndInit();
             this.ResumeLayout(false);
 

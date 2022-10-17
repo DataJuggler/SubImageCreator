@@ -171,10 +171,10 @@ namespace SubImageCreator
                         if (HasPixelDatabase)
                         {
                             // get the rows
-                            double rows = PixelDatabase.Width / WidthControl.IntValue;
+                            double columns = PixelDatabase.Width / WidthControl.IntValue;
 
                             // Display the rows
-                            this.RowsControl.Text = this.Text = Math.Floor(rows).ToString();
+                            this.RowsControl.Text = this.Text = Math.Floor(columns).ToString();
                         }
                     }
                     else if (sender.Name == this.HeightControl.Name)
@@ -183,10 +183,10 @@ namespace SubImageCreator
                         if (HasPixelDatabase)
                         {
                             // get the columns
-                            double columns = PixelDatabase.Height / HeightControl.IntValue;
+                            double rows = PixelDatabase.Height / HeightControl.IntValue;
 
                             // Display the columns
-                            this.ColumnsControl.Text = this.Text = Math.Floor(columns).ToString();
+                            this.ColumnsControl.Text = this.Text = Math.Floor(rows).ToString();
                         }
                     }
                 }
