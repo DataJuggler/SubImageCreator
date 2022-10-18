@@ -194,7 +194,7 @@ namespace SubImageCreator
             this.HeightControl.PasswordMode = false;
             this.HeightControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.HeightControl.Size = new System.Drawing.Size(281, 32);
-            this.HeightControl.TabIndex = 6;
+            this.HeightControl.TabIndex = 5;
             this.HeightControl.TextBoxBottomMargin = 0;
             this.HeightControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
             this.HeightControl.TextBoxEditableColor = System.Drawing.Color.White;
@@ -224,7 +224,7 @@ namespace SubImageCreator
             this.WidthControl.PasswordMode = false;
             this.WidthControl.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.WidthControl.Size = new System.Drawing.Size(281, 32);
-            this.WidthControl.TabIndex = 5;
+            this.WidthControl.TabIndex = 6;
             this.WidthControl.TextBoxBottomMargin = 0;
             this.WidthControl.TextBoxDisabledColor = System.Drawing.Color.LightGray;
             this.WidthControl.TextBoxEditableColor = System.Drawing.Color.White;
