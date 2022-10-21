@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Art.ico</ApplicationIcon>
     <AssemblyVersion>1.1</AssemblyVersion>
@@ -10,9 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DataJuggler.PixelDatabase" Version="6.2.1" />
-    <PackageReference Include="DataJuggler.UltimateHelper" Version="6.0.6" />
-    <PackageReference Include="DataJuggler.Win.Controls" Version="6.2.4" />
+    <PackageReference Include="DataJuggler.PixelDatabase" Version="7.0.1-rc1" />
+    <PackageReference Include="DataJuggler.UltimateHelper" Version="7.0.0-rc1" />
+    <PackageReference Include="DataJuggler.Win.Controls" Version="7.0.0-rc1" />
   </ItemGroup>
 
   <ItemGroup>
